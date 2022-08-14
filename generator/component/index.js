@@ -30,13 +30,13 @@ function generatorComp(){
         actions = actions.concat([
           {
             type: 'add', // 操作类型，这里是添加文件
-            path: '../src/@core/components/{{camelCase FILE_NAME}}/{{camelCase FILE_NAME}}.tsx',
+            path: '../src/_core/components/{{camelCase FILE_NAME}}/{{camelCase FILE_NAME}}.tsx',
             templateFile: './component/component.tsx.hbs', // 模板文件的路径
           },
           {
             type: 'add', // 操作类型，这里是添加文件
             path:
-              '../src/@core/components/{{camelCase FILE_NAME}}/{{camelCase FILE_NAME}}.scss', // 添加的文件的路径
+              '../src/_core/components/{{camelCase FILE_NAME}}/{{camelCase FILE_NAME}}.scss', // 添加的文件的路径
             templateFile: './component/component.scss.hbs', // 模板文件的路径
           },
         ])
