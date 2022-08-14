@@ -1,0 +1,30 @@
+/**
+  * @name {{FILE_NAME}}
+  * @description {{FILE_DESC}}
+  * @constructor
+  */
+import { FC, useEffect, ReactNode } from "react";
+import { View } from  '@tarojs/components'
+
+/**
+ * {{pascalCase FILE_NAME}} Props
+ */
+export interface I{{pascalCase FILE_NAME}}Props{
+  children?: ReactNode
+}
+
+
+const {{pascalCase FILE_NAME}}:FC<I{{pascalCase FILE_NAME}}Props> = (props)=>{
+
+  useEffect(()=>{
+    console.log('{{pascalCase FILE_NAME}} component render！');
+  },[])
+
+  return (
+    <View className='{{dashCase FILE_NAME}}'>
+      hello Component!
+    </View>
+  )
+}
+
+export default {{pascalCase FILE_NAME}};
