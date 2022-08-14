@@ -35,7 +35,7 @@
     "lint:prettier": "prettier --write  \"src/**/*.{js,json,tsx,css,less,scss,html,md}\"",
     "lint:lint-staged": "lint-staged",
     "reinstall": "rimraf pnpm-lock.yaml && rimraf package.lock.json && rimraf node_modules && pnpm bootstrap",
-    "prepare": "husky install"
+    "prepare": "pnpm husky install"
   },
   "browserslist": [
     "last 3 versions",
@@ -89,7 +89,8 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^8.0.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
     "plop": "^3.1.1",
     "prettier": "^2.7.1",
     "react-refresh": "^0.11.0",
@@ -108,7 +109,7 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "{!(package)*.json": [
+    "{!(package)*.json}": [
       "prettier --write--parser json"
     ],
     "package.json": [

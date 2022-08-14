@@ -1,3 +1,4 @@
 /generator
 /config
 commitlint.config.js
+.cz-config.js
