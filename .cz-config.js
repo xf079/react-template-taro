@@ -1,7 +1,7 @@
 function createCZConfig() {
   return {
     types: [
-      { value: 'feat', name: '特性:    一个新的特' },
+      { value: 'feat', name: '特性:    一个新的特性' },
       { value: 'fix', name: '修复:    修复一个Bug' },
       { value: 'docs', name: '文档:    变更的只有文档' },
       {
@@ -36,14 +36,14 @@ function createCZConfig() {
     */
     // override the messages, defaults are as follows
     messages: {
-      type: '选择您要提交的更改类型：',
+      type: '选择您要提交的类型：',
       scope: '选择一个scope (可选):',
       // used if allowCustomScopes is true
       customScope: 'Denote the SCOPE of this change:',
       subject: '短说明:\n',
       body: '长说明，使用"|"换行(可选)：\n',
       breaking: '非兼容性说明 (可选):\n',
-      footer: '关联关闭的issue，例如：#31, #34(可选):\n',
+      footer: '关联的issue，例如：#31, #34(可选):\n',
       confirmCommit: '确定提交说明?',
     },
 

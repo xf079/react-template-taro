@@ -3,7 +3,7 @@
   * @description 常用弹出层
   * @constructor
   */
-import { FC, useEffect, ReactNode } from "react";
+import { FC, useEffect, ReactNode } from 'react';
 import { View } from  '@tarojs/components'
 
 /**

@@ -6,7 +6,7 @@ function generatorComp(){
       {
         type: 'input', // 问题类型 此处为输入
         name: 'hasCoreComponent', // actions 和 hbs 模板文件中可使用该变量
-        message: '是否创建核心组件(Y/N)？ N', // 问题
+        message: '是否创建核心组件(Y/N)？', // 问题
         default: 'N', // 问题的默认答案
       },
       {

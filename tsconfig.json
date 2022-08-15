@@ -18,11 +18,11 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "resolveJsonModule": true,
-    "typeRoots": ["node_modules/@types"]
+    "typeRoots": ["node_modules/@types"],
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["./src",
-    "./typings"
-  ],
-  "compileOnSave": false,
-  "exclude": ["generator", "config"]
+  "include": ["./src", "./typings", "node_modules/@tarojs/taro/types"],
+  "compileOnSave": false
 }
