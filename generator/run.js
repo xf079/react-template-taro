@@ -1,15 +1,11 @@
 const componentGenerator = require('./component/index')
+const { updateKey } = require('./utils')
 
 const generators = {
   component: componentGenerator,
   page: componentGenerator,
   store: componentGenerator,
   service: componentGenerator,
-}
-
-function updateKey(key, len) {
-  const whitespaceLen = len - key.length
-  return new Array(whitespaceLen).fill(' ').join('') + key
 }
 
 function generator(plop) {
