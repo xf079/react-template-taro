@@ -1,6 +1,9 @@
+import './index.scss'
 
+import { View } from '@tarojs/components'
 
+const TestPage = () => {
+  return <View></View>
+}
 
-definePageConfig({
-
-})
+export default TestPage

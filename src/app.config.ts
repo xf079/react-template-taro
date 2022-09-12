@@ -1,4 +1,4 @@
-export default defineAppConfig({
+export default {
   pages: ['pages/index/index'],
   window: {
     backgroundTextStyle: 'light',
@@ -6,4 +6,4 @@ export default defineAppConfig({
     navigationBarTitleText: 'WeChat',
     navigationBarTextStyle: 'black',
   },
-})
+}

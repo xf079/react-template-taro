@@ -18,11 +18,11 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "resolveJsonModule": true,
-    "typeRoots": ["node_modules/@types"]
+    "typeRoots": ["node_modules/@types", "typings", "src/typings"],
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["./src",
-    "./typings"
-  ],
-  "compileOnSave": false,
-  "exclude": ["generator", "config"]
+  "exclude": ["dist"],
+  "compileOnSave": false
 }

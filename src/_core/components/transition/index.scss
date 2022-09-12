@@ -1,0 +1,226 @@
+@import '../styles/variables';
+
+@keyframes #{$component-prefix}slide-up-enter {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes #{$component-prefix}slide-up-exit {
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes #{$component-prefix}slide-down-enter {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes #{$component-prefix}slide-down-exit {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes #{$component-prefix}slide-left-enter {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes #{$component-prefix}slide-left-exit {
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes #{$component-prefix}slide-right-enter {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes #{$component-prefix}slide-right-exit {
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes #{$component-prefix}fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes #{$component-prefix}fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes #{$component-prefix}rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Fade Animation
+.#{$component-prefix}transition-fade {
+  &-appear-active,
+  &-enter-active {
+    animation-name: #{$component-prefix}fade-in;
+    animation-duration: var(
+      --animation-duration-base,
+      $animation-duration-base
+    );
+    animation-timing-function: var(
+      --animation-timing-function-enter,
+      $animation-timing-function-enter
+    );
+    animation-fill-mode: both;
+  }
+
+  &-exit-active {
+    animation-name: #{$component-prefix}fade-out;
+    animation-duration: var(
+      --animation-duration-base,
+      $animation-duration-base
+    );
+    animation-timing-function: var(
+      --animation-timing-function-exit,
+      $animation-timing-function-exit
+    );
+    animation-fill-mode: both;
+  }
+}
+
+// Slide Animation
+.#{$component-prefix}transition-slide-up {
+  &-appear-active,
+  &-enter-active {
+    animation-name: #{$component-prefix}slide-up-enter;
+    animation-duration: var(
+      --animation-duration-base,
+      $animation-duration-base
+    );
+    animation-timing-function: var(
+      --animation-timing-function-enter,
+      $animation-timing-function-enter
+    );
+    animation-fill-mode: both;
+  }
+
+  &-exit-active {
+    animation-name: #{$component-prefix}slide-up-exit;
+    animation-duration: var(
+      --animation-duration-base,
+      $animation-duration-base
+    );
+    animation-timing-function: var(
+      --animation-timing-function-enter,
+      $animation-timing-function-enter
+    );
+    animation-fill-mode: both;
+  }
+}
+
+.#{$component-prefix}transition-slide-down {
+  &-appear-active,
+  &-enter-active {
+    animation-name: #{$component-prefix}slide-down-enter;
+    animation-duration: var(
+      --animation-duration-base,
+      $animation-duration-base
+    );
+    animation-timing-function: var(
+      --animation-timing-function-enter,
+      $animation-timing-function-enter
+    );
+    animation-fill-mode: both;
+  }
+
+  &-exit-active {
+    animation-name: #{$component-prefix}slide-down-exit;
+    animation-duration: var(
+      --animation-duration-base,
+      $animation-duration-base
+    );
+    animation-timing-function: var(
+      --animation-timing-function-enter,
+      $animation-timing-function-enter
+    );
+    animation-fill-mode: both;
+  }
+}
+
+.#{$component-prefix}transition-slide-left {
+  &-appear-active,
+  &-enter-active {
+    animation-name: #{$component-prefix}slide-left-enter;
+    animation-duration: var(
+      --animation-duration-base,
+      $animation-duration-base
+    );
+    animation-timing-function: var(
+      --animation-timing-function-enter,
+      $animation-timing-function-enter
+    );
+    animation-fill-mode: both;
+  }
+
+  &-exit-active {
+    animation-name: #{$component-prefix}slide-left-exit;
+    animation-duration: var(
+      --animation-duration-base,
+      $animation-duration-base
+    );
+    animation-timing-function: var(
+      --animation-timing-function-enter,
+      $animation-timing-function-enter
+    );
+    animation-fill-mode: both;
+  }
+}
+
+.#{$component-prefix}transition-slide-right {
+  &-appear-active,
+  &-enter-active {
+    animation-name: #{$component-prefix}slide-right-enter;
+    animation-duration: var(
+      --animation-duration-base,
+      $animation-duration-base
+    );
+    animation-timing-function: var(
+      --animation-timing-function-enter,
+      $animation-timing-function-enter
+    );
+    animation-fill-mode: both;
+  }
+
+  &-exit-active {
+    animation-name: #{$component-prefix}slide-right-exit;
+    animation-duration: var(
+      --animation-duration-base,
+      $animation-duration-base
+    );
+    animation-timing-function: var(
+      --animation-timing-function-enter,
+      $animation-timing-function-enter
+    );
+    animation-fill-mode: both;
+  }
+}
