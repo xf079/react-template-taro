@@ -2,14 +2,31 @@
   "miniprogramRoot": "./dist",
   "projectname": "react-template-taro",
   "description": "react template taro",
-  "appid": "touristappid",
+  "appid": "wxf4aab3a69d357020",
   "setting": {
     "urlCheck": true,
     "es6": false,
     "enhance": false,
     "compileHotReLoad": false,
     "postcss": false,
-    "minified": false
+    "minified": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "minifyWXML": false,
+    "minifyWXSS": false
   },
-  "compileType": "miniprogram"
+  "compileType": "miniprogram",
+  "libVersion": "2.29.0",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "tab",
+    "tabSize": 2
+  }
 }

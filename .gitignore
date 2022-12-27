@@ -3,6 +3,7 @@ deploy_versions/
 .temp/
 .rn_temp/
 node_modules/
+.swc/
 .idea
 .vscode
 .DS_Store

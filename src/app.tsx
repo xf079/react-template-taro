@@ -1,5 +1,7 @@
 import React, { ReactNode } from 'react'
 import '@/app.scss'
+import { Provider } from 'react-redux'
+import store from '@/stores'
 
 interface IAppProps {
   children: ReactNode
@@ -13,7 +15,11 @@ class App extends React.PureComponent<IAppProps> {
   componentDidHide() {}
 
   render() {
-    return this.props.children
+    return (
+      <Provider store={store}>
+        {this.props.children}
+      </Provider>
+    )
   }
 }
 

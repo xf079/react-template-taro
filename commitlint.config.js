@@ -1,6 +1,3 @@
-module.exports = {
-  extends: ['cz']
-};
 
 /**
  * build：主要目的是修改项目构建系统(例如 glup，webpack，rollup 的配置等)的提交
@@ -17,3 +14,8 @@ module.exports = {
  * chore：不属于以上类型的其他类型
  *
  */
+
+module.exports = {
+  extends: ['cz']
+};
+

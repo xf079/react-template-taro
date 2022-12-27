@@ -1,25 +1,42 @@
-import { StateCreator } from 'zustand'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import StoreName from '@/stores/constant';
 
-export interface IGlobalStoreState {
-  version: string
-}
+const initialState = {
+  appName: '',
+  enterFirstMiniProgram: false
+};
 
-export interface IGlobalStoreEvents {
-  updateVersion: (version: string) => void
-}
+/**
+ * 获取小程序全局配置
+ */
+export const getGlobalData = createAsyncThunk(
+  `${StoreName.Global}/getGlobalConfig`,
+  (userId: number) => {
+    return new Promise<string>((resolve) => {
+      setTimeout(() => {
+        resolve(userId + '---');
+      }, 2000);
+    });
+  }
+);
 
-export type IGlobalStore = IGlobalStoreState & IGlobalStoreEvents
-
-const createGlobalSlice: StateCreator<
-  IGlobalStore,
-  [],
-  [],
-  IGlobalStore
-> = (set) => ({
-  version: '0.0.1',
-  updateVersion: (version) => {
-    set({ version })
+const globalSlice = createSlice({
+  name: StoreName.Global,
+  initialState,
+  reducers: {
+    updateEnterFirstMiniProgram: (state, action) => {
+      state.enterFirstMiniProgram = action.payload;
+    }
   },
-})
+  extraReducers: (builder) => {
+    builder.addCase(getGlobalData.fulfilled, (state, action) => {
+      state.appName = action.payload;
+    });
+  }
+});
 
-export default createGlobalSlice
+const { reducer, actions } = globalSlice;
+
+export const { updateEnterFirstMiniProgram } = actions;
+
+export default reducer;
