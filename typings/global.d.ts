@@ -1,15 +1,15 @@
 /// <reference types="@tarojs/taro" />
 
-declare module '*.png'
-declare module '*.gif'
-declare module '*.jpg'
-declare module '*.jpeg'
-declare module '*.svg'
-declare module '*.css'
-declare module '*.less'
-declare module '*.scss'
-declare module '*.sass'
-declare module '*.styl'
+declare module '*.png';
+declare module '*.gif';
+declare module '*.jpg';
+declare module '*.jpeg';
+declare module '*.svg';
+declare module '*.css';
+declare module '*.less';
+declare module '*.scss';
+declare module '*.sass';
+declare module '*.styl';
 
 type TARO_ENV =
   | 'weapp'
@@ -21,10 +21,8 @@ type TARO_ENV =
   | 'quickapp'
   | 'qq'
   | 'jd'
-  | 'xhs'
+  | 'xhs';
 
-declare namespace NodeJS {
-  interface ProcessEnv {
-    TARO_ENV: TARO_ENV
-  }
-}
+declare const NODE_ENV: string;
+declare const TARO_ENV: TARO_ENV;
+declare const DESIGN_WIDTH: number;

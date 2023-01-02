@@ -3,22 +3,41 @@
  * @description 常用弹出层
  * @constructor
  */
-import { FC, useEffect, ReactNode } from 'react'
-import { View } from '@tarojs/components'
+import {
+  useEffect,
+  ReactNode,
+  memo,
+  forwardRef,
+  useImperativeHandle
+} from 'react';
+import { View } from '@tarojs/components';
 
 /**
+ *
  * Modal Props
  */
 export interface IModalProps {
-  children?: ReactNode
+  title: string;
+  children?: ReactNode;
 }
 
-const Modal: FC<IModalProps> = (props) => {
-  useEffect(() => {
-    console.log('Modal component render！')
-  }, [])
-
-  return <View className='modal'>hello Component!</View>
+export interface IModalRef {
+  setVisible: (status: boolean) => void;
 }
+const Modal = memo(
+  forwardRef<IModalRef, IModalProps>((props, ref) => {
+    const { title } = props;
+    useImperativeHandle(ref, () => ({
+      setVisible(status) {
+        console.log(status);
+      }
+    }));
+    useEffect(() => {
+      console.log('Modal component render！');
+    }, []);
 
-export default Modal
+    return <View className='modal'>{title}hello Component!</View>;
+  })
+);
+
+export default Modal;

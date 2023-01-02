@@ -1,24 +1,15 @@
-import {
-  FC,
-  isValidElement,
-  ReactElement,
-  useMemo,
-  useState,
-  ReactNode,
-} from 'react'
-import { CSSTransition } from 'react-transition-group'
-import {
-  EnterHandler,
-  ExitHandler,
-} from 'react-transition-group/Transition'
-import { prefixClassname } from '../utils/prefix'
+import { FC, useMemo, useState, ReactNode } from 'react';
+import { CSSTransition } from 'react-transition-group';
+import { EnterHandler, ExitHandler } from 'react-transition-group/Transition';
+import { useElementStyle } from '../utils';
+import { prefixClassname } from '../utils/prefix';
 
 export enum TransitionName {
   Fade = 'fade',
   SlideUp = 'slide-up',
   SlideDown = 'slide-down',
   SlideLeft = 'slide-left',
-  SlideRight = 'slide-right',
+  SlideRight = 'slide-right'
 }
 
 const TRANSITION_PRESETS: string[] = [
@@ -26,38 +17,27 @@ const TRANSITION_PRESETS: string[] = [
   TransitionName.SlideUp,
   TransitionName.SlideDown,
   TransitionName.SlideLeft,
-  TransitionName.SlideRight,
-]
+  TransitionName.SlideRight
+];
 
 function isTransitionPreset(name?: string) {
-  return name && TRANSITION_PRESETS.includes(name)
-}
-
-function useElementStyle(children?: ReactNode) {
-  return useMemo(() => {
-    if (!isValidElement(children)) {
-      return {}
-    }
-    const element = children as ReactElement
-    const { style } = element.props
-    return style ?? {}
-  }, [children])
+  return name && TRANSITION_PRESETS.includes(name);
 }
 
 interface TransitionProps {
-  name?: TransitionName | string
-  in?: boolean
-  appear?: boolean
-  mountOnEnter?: boolean
-  unmountOnExit?: boolean
-  timeout?: number | { appear?: number; enter?: number; exit?: number }
-  children?: ReactNode
-  onEnter?: EnterHandler<HTMLElement>
-  onEntering?: EnterHandler<HTMLElement>
-  onEntered?: EnterHandler<HTMLElement>
-  onExit?: ExitHandler<HTMLElement>
-  onExiting?: ExitHandler<HTMLElement>
-  onExited?: ExitHandler<HTMLElement>
+  name?: TransitionName | string;
+  in?: boolean;
+  appear?: boolean;
+  mountOnEnter?: boolean;
+  unmountOnExit?: boolean;
+  timeout?: number | { appear?: number; enter?: number; exit?: number };
+  children?: ReactNode;
+  onEnter?: EnterHandler<HTMLElement>;
+  onEntering?: EnterHandler<HTMLElement>;
+  onEntered?: EnterHandler<HTMLElement>;
+  onExit?: ExitHandler<HTMLElement>;
+  onExiting?: ExitHandler<HTMLElement>;
+  onExited?: ExitHandler<HTMLElement>;
 }
 
 const Transition: FC<TransitionProps> = (props) => {
@@ -74,15 +54,15 @@ const Transition: FC<TransitionProps> = (props) => {
     onEntered,
     onExit,
     onExiting,
-    onExited,
-  } = props
-  const children = useMemo(() => childrenProp, [childrenProp])
-  const childrenStyle = useElementStyle(children)
+    onExited
+  } = props;
+  const children = useMemo(() => childrenProp, [childrenProp]);
+  const childrenStyle = useElementStyle(children);
   const transactionName = isTransitionPreset(name)
     ? prefixClassname(`transition-${name}`)
-    : name
-  const [enter, setEnter] = useState(false)
-  const [exited, setExited] = useState(false)
+    : name;
+  const [enter, setEnter] = useState(false);
+  const [exited, setExited] = useState(false);
 
   return (
     <CSSTransition
@@ -94,27 +74,27 @@ const Transition: FC<TransitionProps> = (props) => {
       classNames={transactionName}
       style={{
         ...childrenStyle,
-        display: enter && !exited ? '' : 'none',
+        display: enter && !exited ? '' : 'none'
       }}
       onEnter={(node, isAppearing) => {
-        setEnter(true)
-        setExited(false)
+        setEnter(true);
+        setExited(false);
         // @ts-ignore
-        onEnter?.(node, isAppearing)
+        onEnter?.(node, isAppearing);
       }}
       onEntering={onEntering}
       onEntered={onEntered}
       onExit={onExit}
       onExiting={onExiting}
       onExited={(node) => {
-        setEnter(false)
-        setExited(true)
+        setEnter(false);
+        setExited(true);
         // @ts-ignore
-        onExited?.(node)
+        onExited?.(node);
       }}
     >
       {children}
     </CSSTransition>
-  )
-}
-export default Transition
+  );
+};
+export default Transition;

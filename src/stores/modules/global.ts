@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { persistReducer } from 'redux-persist';
 import StoreName from '@/stores/constant';
+import storage from '@/utils/storage/persistStorage';
 
 const initialState = {
   appName: '',
@@ -35,8 +37,13 @@ const globalSlice = createSlice({
   }
 });
 
+const persistConfig = {
+  key: StoreName.Global,
+  storage: storage
+};
+
 const { reducer, actions } = globalSlice;
 
 export const { updateEnterFirstMiniProgram } = actions;
 
-export default reducer;
+export default persistReducer(persistConfig, reducer);

@@ -33,6 +33,7 @@
     "no-var": "error",
     "no-unused-vars": "off",
     "react/jsx-uses-react": "off",
+    "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "camelcase": "error",
     "quotes": ["error", "single"],
@@ -41,7 +42,6 @@
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "spaced-comment": ["error", "always", { "markers": ["/"] }],
-    "react/prop-types": [2, { "ignore": ["children"] }]
   },
   "settings": {
     "import/parsers": {
