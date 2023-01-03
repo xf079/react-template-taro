@@ -12,42 +12,66 @@ module.exports = {
     confirmCommit: '是否提交或修改commit ?'
   },
   types: [
-    { value: 'feat', name: 'feat:     新增功能 | A new feature' },
-    { value: 'fix', name: 'fix:      修复缺陷 | A bug fix' },
-    { value: 'docs', name: 'docs:     文档更新 | Documentation only changes' },
+    {
+      value: 'feat',
+      emoji: ':sparkles:',
+      name: 'feat:     新增功能 | A new feature'
+    },
+    {
+      value: 'fix',
+      emoji: ':bug:',
+      name: 'fix:      修复缺陷 | A bug fix'
+    },
+    {
+      value: 'docs',
+      emoji: ':memo:',
+      name: 'docs:     文档更新 | Documentation only changes'
+    },
     {
       value: 'style',
+      emoji: 'lipstick',
       name: 'style:    代码格式 | Changes that do not affect the meaning of the code'
     },
     {
       value: 'refactor',
+      emoji: ':recycle:',
       name: 'refactor: 代码重构 | A code change that neither fixes a bug nor adds a feature'
     },
     {
       value: 'perf',
+      emoji: ':zap:',
       name: 'perf:     性能提升 | A code change that improves performance'
     },
     {
       value: 'test',
+      emoji: ':white_check_mark:',
       name: 'test:     测试相关 | Adding missing tests or correcting existing tests'
     },
     {
       value: 'build',
+      emoji: ':package:',
       name: 'build:    构建相关 | Changes that affect the build system or external dependencies'
     },
     {
       value: 'ci',
+      emoji: ':ferris_wheel:',
       name: 'ci:       持续集成 | Changes to our CI configuration files and scripts'
     },
-    { value: 'revert', name: 'revert:   回退代码 | Revert to a commit' },
+    {
+      value: 'revert',
+      emoji: ':hammer:',
+      name: 'revert:   回退代码 | Revert to a commit'
+    },
     {
       value: 'chore',
+      emoji: ':rewind:',
       name: 'chore:    其他修改 | Other changes that do not modify src or test files'
     }
   ],
+  useEmoji: true,
+  emojiAlign: 'left',
   scopes: ['site', 'util', 'script', 'tool'],
   scopeFilters: ['__tests__', '_util'],
-  useEmoji: true,
   maxHeaderLength: 100,
   allowEmptyIssuePrefix: false,
   allowCustomIssuePrefix: false
