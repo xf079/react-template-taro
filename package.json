@@ -72,9 +72,9 @@
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
     "babel-preset-taro": "3.5.10",
-    "commitizen": "^4.2.5",
-    "commitlint-config-cz": "^0.13.3",
-    "cz-customizable": "^6.9.1",
+    "commitizen": "^4.2.6",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-git": "^1.4.1",
     "eslint": "8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-taro": "3.5.10",
@@ -95,6 +95,10 @@
     "webpack": "5.69.0"
   },
   "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git",
+      "czConfig": "./scripts/commitizen.js"
+    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
