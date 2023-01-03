@@ -1,1 +1,11 @@
-$component-prefix: core-;
+$component-prefix: teco-core-;
+
+$animation-duration-base: 0.4s;
+$animation-duration-fast: 0.3s;
+$animation-timing-function-enter: ease-out;
+$animation-timing-function-exit: ease-in;
+
+// overlay
+$overlay-z-index: 1200;
+
+$overlay-background-color: rgba(0, 0, 0, 0.5);

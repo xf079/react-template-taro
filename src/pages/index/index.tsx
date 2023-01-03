@@ -8,6 +8,8 @@ import './index.scss';
 import Modal from '@/components/modal/modal';
 import useInterval from '@/hooks/_core/useInterval';
 import useUpdate from '@/hooks/_core/useUpdate';
+import Overlay from '@/_core/components/overlay';
+import { useState } from 'react';
 
 definePageConfig({
   navigationBarTitleText: '首页'
@@ -26,6 +28,7 @@ const Index = () => {
       immediate: true
     }
   );
+  const [open, setOpen] = useState(false);
   const update = useUpdate();
   const dispatch = useAppDispatch();
 
@@ -35,7 +38,6 @@ const Index = () => {
   const handleUpdateEnter = () => {
     dispatch(updateEnterFirstMiniProgram(true));
   };
-  console.log('111');
   return (
     <View className='index'>
       <Text onClick={handleUpdateAppName}>Hello world! {appName}</Text>
@@ -46,6 +48,7 @@ const Index = () => {
       <Button onClick={() => clear()}>清除定时器</Button>
       <Button onClick={() => run()}>开始定时器</Button>
       <Button onClick={() => update()}>更新</Button>
+      <Button onClick={() => setOpen(true)}>打开遮罩层</Button>
       <View
         id='test'
         ref={(ref) => {
@@ -54,6 +57,14 @@ const Index = () => {
       >
         123
       </View>
+      <Overlay
+        open={open}
+        closeable
+        duration={1000}
+        onClose={() => setOpen(false)}
+      >
+        123
+      </Overlay>
     </View>
   );
 };

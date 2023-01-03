@@ -1,8 +1,12 @@
 import { FC, useMemo, useState, ReactNode } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { EnterHandler, ExitHandler } from 'react-transition-group/Transition';
-import { useElementStyle } from '../utils';
-import { prefixClassname } from '../utils/prefix';
+import type {
+  EnterHandler,
+  ExitHandler
+} from 'react-transition-group/Transition';
+import { useElementStyle, prefixClassname } from '../utils';
+
+import './transition.scss';
 
 export enum TransitionName {
   Fade = 'fade',
@@ -32,12 +36,12 @@ interface TransitionProps {
   unmountOnExit?: boolean;
   timeout?: number | { appear?: number; enter?: number; exit?: number };
   children?: ReactNode;
-  onEnter?: EnterHandler<HTMLElement>;
+  onEnter?: EnterHandler<undefined>;
   onEntering?: EnterHandler<HTMLElement>;
   onEntered?: EnterHandler<HTMLElement>;
   onExit?: ExitHandler<HTMLElement>;
   onExiting?: ExitHandler<HTMLElement>;
-  onExited?: ExitHandler<HTMLElement>;
+  onExited?: ExitHandler<undefined>;
 }
 
 const Transition: FC<TransitionProps> = (props) => {
@@ -74,12 +78,11 @@ const Transition: FC<TransitionProps> = (props) => {
       classNames={transactionName}
       style={{
         ...childrenStyle,
-        display: enter && !exited ? '' : 'none'
+        display: enter && !exited ? 'block' : 'none'
       }}
       onEnter={(node, isAppearing) => {
         setEnter(true);
         setExited(false);
-        // @ts-ignore
         onEnter?.(node, isAppearing);
       }}
       onEntering={onEntering}
@@ -89,7 +92,6 @@ const Transition: FC<TransitionProps> = (props) => {
       onExited={(node) => {
         setEnter(false);
         setExited(true);
-        // @ts-ignore
         onExited?.(node);
       }}
     >
@@ -97,4 +99,6 @@ const Transition: FC<TransitionProps> = (props) => {
     </CSSTransition>
   );
 };
+Transition.displayName = 'Transition';
+
 export default Transition;

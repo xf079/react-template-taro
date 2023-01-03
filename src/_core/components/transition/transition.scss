@@ -87,10 +87,7 @@
       --animation-duration-base,
       $animation-duration-base
     );
-    animation-timing-function: var(
-      --animation-timing-function-enter,
-      $animation-timing-function-enter
-    );
+    animation-timing-function: $animation-timing-function-enter;
     animation-fill-mode: both;
   }
 
@@ -100,10 +97,7 @@
       --animation-duration-base,
       $animation-duration-base
     );
-    animation-timing-function: var(
-      --animation-timing-function-exit,
-      $animation-timing-function-exit
-    );
+    animation-timing-function: $animation-timing-function-exit;
     animation-fill-mode: both;
   }
 }
@@ -117,10 +111,7 @@
       --animation-duration-base,
       $animation-duration-base
     );
-    animation-timing-function: var(
-      --animation-timing-function-enter,
-      $animation-timing-function-enter
-    );
+    animation-timing-function: $animation-timing-function-enter;
     animation-fill-mode: both;
   }
 
@@ -130,10 +121,7 @@
       --animation-duration-base,
       $animation-duration-base
     );
-    animation-timing-function: var(
-      --animation-timing-function-enter,
-      $animation-timing-function-enter
-    );
+    animation-timing-function: $animation-timing-function-enter;
     animation-fill-mode: both;
   }
 }
@@ -146,10 +134,7 @@
       --animation-duration-base,
       $animation-duration-base
     );
-    animation-timing-function: var(
-      --animation-timing-function-enter,
-      $animation-timing-function-enter
-    );
+    animation-timing-function: $animation-timing-function-enter;
     animation-fill-mode: both;
   }
 
@@ -159,10 +144,7 @@
       --animation-duration-base,
       $animation-duration-base
     );
-    animation-timing-function: var(
-      --animation-timing-function-enter,
-      $animation-timing-function-enter
-    );
+    animation-timing-function: $animation-timing-function-enter;
     animation-fill-mode: both;
   }
 }
@@ -175,10 +157,7 @@
       --animation-duration-base,
       $animation-duration-base
     );
-    animation-timing-function: var(
-      --animation-timing-function-enter,
-      $animation-timing-function-enter
-    );
+    animation-timing-function: $animation-timing-function-enter;
     animation-fill-mode: both;
   }
 
@@ -188,10 +167,7 @@
       --animation-duration-base,
       $animation-duration-base
     );
-    animation-timing-function: var(
-      --animation-timing-function-enter,
-      $animation-timing-function-enter
-    );
+    animation-timing-function: $animation-timing-function-enter;
     animation-fill-mode: both;
   }
 }
@@ -204,10 +180,7 @@
       --animation-duration-base,
       $animation-duration-base
     );
-    animation-timing-function: var(
-      --animation-timing-function-enter,
-      $animation-timing-function-enter
-    );
+    animation-timing-function: $animation-timing-function-enter;
     animation-fill-mode: both;
   }
 
@@ -217,10 +190,7 @@
       --animation-duration-base,
       $animation-duration-base
     );
-    animation-timing-function: var(
-      --animation-timing-function-enter,
-      $animation-timing-function-enter
-    );
+    animation-timing-function: $animation-timing-function-enter;
     animation-fill-mode: both;
   }
 }

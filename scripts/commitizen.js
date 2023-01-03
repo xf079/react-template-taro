@@ -9,7 +9,7 @@ module.exports = {
     footerPrefixesSelect: '选择关联issue前缀（可选）:',
     customFooterPrefix: '输入自定义issue前缀 :',
     footer: '列举关联issue (可选) 例如: #31, #I3244 :\n',
-    confirmCommit: '是否提交或修改commit ?'
+    confirmCommit: '是否提交commit ?'
   },
   types: [
     {
