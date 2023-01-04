@@ -10,7 +10,6 @@ export function useElementStyle(children?: ReactNode) {
     }
     const element = children as ReactElement;
     const { style } = element.props;
-    console.log(style ?? {});
     return style ?? {};
   }, [children]);
 }

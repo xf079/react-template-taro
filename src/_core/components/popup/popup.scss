@@ -1,0 +1,87 @@
+@import '../styles/variables';
+
+.#{$component-prefix}popup {
+  position: fixed;
+  z-index: $popup-z-index;
+  max-height: 100%;
+  overflow-y: auto;
+  background: $popup-background-color;
+  animation-duration: $popup-animation-duration;
+  -webkit-overflow-scrolling: touch;
+
+  &--center {
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  &--top {
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    &.#{$component-prefix}popup--rounded {
+      border-radius: 0 0 $popup-rounded-border-radius
+        $popup-rounded-border-radius;
+    }
+  }
+
+  &--bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    &.#{$component-prefix}popup--rounded {
+      border-radius: $popup-rounded-border-radius $popup-rounded-border-radius 0
+        0;
+    }
+  }
+
+  &--right {
+    top: 50%;
+    right: 0;
+    transform: translate3d(0, -50%, 0);
+
+    &.#{$component-prefix}popup--rounded {
+      border-radius: $popup-rounded-border-radius 0 0
+        $popup-rounded-border-radius;
+    }
+
+    &.#{$component-prefix}transition-slide-right {
+      @keyframes #{$component-prefix}slide-right-enter {
+        from {
+          transform: translate3d(100%, -50%, 0);
+        }
+      }
+      @keyframes #{$component-prefix}slide-right-exit {
+        to {
+          transform: translate3d(100%, -50%, 0);
+        }
+      }
+    }
+  }
+
+  &--left {
+    top: 50%;
+    left: 0;
+    transform: translate3d(0, -50%, 0);
+
+    &.#{$component-prefix}popup--rounded {
+      border-radius: 0 $popup-rounded-border-radius $popup-rounded-border-radius
+        0;
+    }
+
+    &.#{$component-prefix}transition-slide-left {
+      @keyframes #{$component-prefix}slide-left-enter {
+        from {
+          transform: translate3d(-100%, -50%, 0);
+        }
+      }
+      @keyframes #{$component-prefix}slide-left-exit {
+        to {
+          transform: translate3d(-100%, -50%, 0);
+        }
+      }
+    }
+  }
+}

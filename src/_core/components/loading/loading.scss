@@ -1,0 +1,40 @@
+@import '../styles/variables';
+
+.#{$component-prefix}loading {
+  display: flex;
+  &__vertical {
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__horizontal {
+    align-items: center;
+    flex-direction: row;
+  }
+  &__spinner {
+    border-width: $loading-line-width;
+    border-style: solid;
+    border-top-color: transparent !important;
+    border-radius: 100%;
+    animation: spinner infinite $loading-animation-duration linear;
+    margin-right: 10px;
+  }
+  &__circular {
+    border-width: $loading-line-width;
+    border-style: solid;
+    border-top-color: transparent !important;
+    border-radius: 100%;
+    margin-right: 10px;
+    animation: spinner infinite $loading-animation-duration linear;
+  }
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(220deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
