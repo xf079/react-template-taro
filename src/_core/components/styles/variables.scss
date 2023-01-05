@@ -9,7 +9,11 @@ $animation-timing-function-enter: cubic-bezier(0.7, 0.3, 0.1, 1);
 $animation-timing-function-exit: cubic-bezier(0.9, 0, 0.3, 0.7);
 
 // loading
-$loading-line-width: 4px;
+$loading-spinner-size: 48px;
+$loading-circular-size: 48px;
+$loading-circular-width: 2px;
+$loading-font-size: 28px;
+$loading-color: #000;
 $loading-animation-duration: 0.85s;
 
 // overlay
@@ -21,3 +25,15 @@ $popup-z-index: 1210;
 $popup-background-color: $background-color-light;
 $popup-animation-duration: $animation-duration-base;
 $popup-rounded-border-radius: 16px;
+
+// action-sheet
+$action-sheet-box-bg: #f5f5f5;
+$action-sheet-item-bg: #fff;
+$action-sheet-extra-color: #777;
+$action-sheet-extra-font-size: 24px;
+$action-sheet-border-color: #f3f3f3;
+$action-sheet-danger-color: #ff3141;
+$action-sheet-item-color: #333;
+$action-sheet-item-font-size: 28px;
+$action-sheet-item-description-font-size: 20px;
+$action-sheet-item-description-color: #999;

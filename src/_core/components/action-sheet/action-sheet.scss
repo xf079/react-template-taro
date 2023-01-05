@@ -1,0 +1,63 @@
+@import '../styles/variables';
+
+.#{$component-prefix}action-sheet {
+  background-color: $action-sheet-box-bg;
+  &__extra {
+    display: flex;
+    justify-content: center;
+    color: $action-sheet-extra-color;
+    font-size: $action-sheet-extra-font-size;
+    padding: 18px 12px;
+    box-sizing: border-box;
+    border-bottom: 1px solid $action-sheet-border-color;
+    background-color: $action-sheet-item-bg;
+  }
+  &__list {
+    border-bottom: 1px solid $action-sheet-border-color;
+  }
+  &__item {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    box-sizing: border-box;
+    background-color: $action-sheet-item-bg;
+    border-bottom: 1px solid $action-sheet-border-color;
+    transition: background-color 0.2s;
+    &:active {
+      background-color: #eeeeee;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+    &__name {
+      color: $action-sheet-item-color;
+      font-size: $action-sheet-item-font-size;
+    }
+    &__description {
+      font-size: $action-sheet-item-description-font-size;
+      color: $action-sheet-item-description-color;
+      padding-top: 4px;
+    }
+    &-disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+      opacity: 0.4;
+    }
+    &-danger {
+      .#{$component-prefix}action-sheet__item__name {
+        color: $action-sheet-danger-color;
+      }
+    }
+    &-bold {
+      .#{$component-prefix}action-sheet__item__name {
+        font-weight: bold;
+      }
+    }
+  }
+  &__cancel {
+    margin-top: 16px;
+  }
+}

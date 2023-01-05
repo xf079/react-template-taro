@@ -19,6 +19,7 @@ export interface PopupProps extends ViewProps {
   visible?: boolean;
   placement?: PopupPlacement;
   rounded?: boolean;
+  closeable?: boolean;
   children?: ReactNode;
 
   duration?: number;
@@ -42,6 +43,7 @@ const Popup = memo<PopupProps>((props) => {
     visible: visibleProp,
     placement,
     rounded = false,
+    closeable,
     children,
     duration,
     transaction,
@@ -73,6 +75,7 @@ const Popup = memo<PopupProps>((props) => {
     <PopupContext.Provider
       value={{
         visible,
+        closeable,
         duration,
         placement,
         onClose

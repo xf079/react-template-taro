@@ -2,6 +2,7 @@ import PopupComponent, { PopupProps } from './popup';
 import { ForwardRefExoticComponent } from 'react';
 import PopupOverlay from './popup.overlay';
 
+export type { PopupProps };
 export type { PopupPlacement } from './shared';
 export type { PopupOverlayProps } from './popup.overlay';
 

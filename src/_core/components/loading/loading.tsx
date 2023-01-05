@@ -1,7 +1,7 @@
-import { isValidElement, memo, ReactNode, useMemo } from 'react';
+import { memo, ReactNode, useMemo } from 'react';
 import { View } from '@tarojs/components';
 import classNames from 'classnames';
-import { isNull, isUndefined } from 'lodash-es';
+import { range } from 'lodash-es';
 import { prefixClassname } from '@/_core/components/utils';
 
 import './loading.scss';
@@ -14,6 +14,49 @@ export interface LoadingProps {
   children?: ReactNode;
 }
 
+const SpinIcon = ({ color }: LoadingProps) => {
+  return (
+    <>
+      {range(0, 8).map((key) => (
+        <View
+          key={key}
+          style={{ color: color }}
+          className={prefixClassname('loading__spinner__item')}
+        />
+      ))}
+    </>
+  );
+};
+
+const SpinnerLoading = ({ size, color }: LoadingProps) => {
+  const baseStyle = useMemo(
+    () => ({
+      width: size,
+      height: size
+    }),
+    [size]
+  );
+  return (
+    <View className={prefixClassname('loading__spinner')} style={baseStyle}>
+      <SpinIcon color={color} />
+    </View>
+  );
+};
+
+const CircularLoading = ({ color, size }: LoadingProps) => {
+  const baseStyle = useMemo(
+    () => ({
+      borderColor: color,
+      width: size,
+      height: size
+    }),
+    [color, size]
+  );
+  return (
+    <View className={prefixClassname('loading__circular')} style={baseStyle} />
+  );
+};
+
 const Loading = memo<LoadingProps>((props) => {
   const {
     color,
@@ -23,27 +66,6 @@ const Loading = memo<LoadingProps>((props) => {
     children
   } = props;
 
-  const baseStyle = useMemo(
-    () => ({
-      borderColor: color ?? undefined,
-      width: size,
-      height: size
-    }),
-    [color, size]
-  );
-
-  const textChildren = useMemo(() => {
-    if (isValidElement(children)) {
-      return children;
-    }
-    if (!isNull(children) || !isUndefined(children)) {
-      return (
-        <View className={prefixClassname('loading__text')}>{children}</View>
-      );
-    }
-    return null;
-  }, [children]);
-
   return (
     <View
       className={classNames(
@@ -51,8 +73,13 @@ const Loading = memo<LoadingProps>((props) => {
         prefixClassname(`loading__${direction}`)
       )}
     >
-      <View className={prefixClassname(`loading__${type}`)} style={baseStyle} />
-      {textChildren}
+      {type === 'circular' && <CircularLoading size={size} color={color} />}
+      {type === 'spinner' && <SpinnerLoading size={size} color={color} />}
+      {children && (
+        <View className={prefixClassname('loading__text')} style={{ color }}>
+          {children}
+        </View>
+      )}
     </View>
   );
 });

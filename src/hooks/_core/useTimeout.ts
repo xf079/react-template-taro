@@ -1,6 +1,6 @@
-import useLatest from '@/hooks/_core/useLatest';
 import { useCallback, useEffect, useRef } from 'react';
-import { isNumber } from '@/utils';
+import { isNumber } from 'lodash-es';
+import useLatest from '@/hooks/_core/useLatest';
 
 const useTimeout = (
   fn: () => void,

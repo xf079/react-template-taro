@@ -10,8 +10,8 @@ import useInterval from '@/hooks/_core/useInterval';
 import useUpdate from '@/hooks/_core/useUpdate';
 import Overlay, { OverlayRefType } from '@/_core/components/overlay';
 import { useRef, useState } from 'react';
-import Popup from '@/_core/components/popup';
 import Loading from '@/_core/components/loading/loading';
+import ActionSheet from '@/_core/components/action-sheet';
 
 definePageConfig({
   navigationBarTitleText: '首页'
@@ -70,15 +70,37 @@ const Index = () => {
       >
         123
       </Overlay>
-      <Popup
+      {/*      <Popup
         visible={visible}
         placement='bottom'
         rounded
         onClose={() => setVisible(false)}
       >
         <View>123</View>
-      </Popup>
-      <Loading direction='horizontal'>加载中。。。</Loading>
+      </Popup>*/}
+      <Loading type='circular' color='red' size={14} direction='vertical'>
+        加载中...
+      </Loading>
+      <ActionSheet
+        visible={visible}
+        closeable
+        actions={[
+          { text: '微信支付', key: 1, description: '使用微信支付' },
+          { text: '删除', danger: true, key: 2, description: '删除后不可恢复' },
+          { text: '支付宝支付', disabled: true, key: 3 },
+          { text: '网页支付', bold: true, key: 4 }
+        ]}
+        closeOnAction
+        onCancelAction={() => {
+          setVisible(false);
+        }}
+        onAction={(action, index) => {
+          console.log(action, index);
+        }}
+        onClose={() => setVisible(false)}
+        extra='标题'
+        cancelText='取消'
+      />
     </View>
   );
 };

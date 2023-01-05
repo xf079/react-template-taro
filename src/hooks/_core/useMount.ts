@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { isFunction } from '@/utils';
+import { isFunction } from 'lodash-es';
 
 const useMount = (fn: () => void) => {
   if (!isFunction(fn)) {

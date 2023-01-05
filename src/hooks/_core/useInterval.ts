@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { isNumber } from '@/utils';
+import { isNumber } from 'lodash-es';
 import useLatest from './useLatest';
 
 const useInterval = (

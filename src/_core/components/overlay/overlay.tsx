@@ -10,7 +10,7 @@ import { View } from '@tarojs/components';
 import { ITouchEvent } from '@tarojs/components/types/common';
 import { ViewProps } from '@tarojs/components/types/View';
 import classNames from 'classnames';
-import { isNumber } from '@/utils';
+import { isNumber } from 'lodash-es';
 import useUncontrolled from '@/hooks/_core/useUncontrolled';
 import { prefixClassname } from '../utils';
 import Transition from '../transition';

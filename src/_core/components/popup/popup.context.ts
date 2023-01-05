@@ -5,7 +5,7 @@ interface PopupContextProps {
   visible?: boolean;
   duration?: number;
   placement?: PopupPlacement;
-
+  closeable?: boolean;
   onClose?(opened: boolean): void;
 }
 
