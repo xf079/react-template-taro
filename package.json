@@ -44,6 +44,11 @@
   ],
   "author": "",
   "dependencies": {
+    "@linkio/core": "workspace:*",
+    "@linkio/hooks": "workspace:*",
+    "@linkio/constants": "workspace:*",
+    "@linkio/styles": "workspace:*",
+    "@linkio/utils": "workspace:*",
     "@reduxjs/toolkit": "^1.9.1",
     "@tarojs/components": "3.6.1",
     "dayjs": "^1.11.5",

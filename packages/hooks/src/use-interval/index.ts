@@ -1,14 +1,13 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { isNumber } from 'lodash-es';
-import useLatest from './useLatest';
+import useLatest from '../use-latest';
 
-const useInterval = (
-  fn: () => void,
-  options: {
-    delay: number | undefined;
-    immediate?: boolean;
-  }
-) => {
+export interface OptionsType {
+  delay: number | undefined;
+  immediate?: boolean;
+}
+
+const useInterval = (fn: () => void, options: OptionsType) => {
   const { immediate = false, delay = undefined } = options;
   const handlerRef = useLatest(fn);
   const timerRef = useRef<NodeJS.Timer | null>(null);

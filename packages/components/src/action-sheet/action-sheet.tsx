@@ -1,8 +1,8 @@
 import { memo, ReactNode } from 'react';
 import classNames from 'classnames';
 import { View } from '@tarojs/components';
-import Popup, { PopupProps } from '@/_core/components/popup';
-import { prefixClassname } from '@/_core/components/utils';
+import Popup, { PopupProps } from '../popup';
+import { prefixClassname } from '@linkio/utils';
 import './action-sheet.scss';
 
 export interface ActionItem {

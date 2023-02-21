@@ -29,5 +29,4 @@ const useUncontrolled = <T>(
   }
   return [uncontrolledValue as T, handleUncontrolledChange, false];
 };
-
 export default useUncontrolled;

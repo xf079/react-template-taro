@@ -1,9 +1,9 @@
-import './index.scss'
+import './index.scss';
 
-import { View } from '@tarojs/components'
+import { View } from '@tarojs/components';
 
 const TestPage = () => {
-  return <View></View>
-}
+  return <View></View>;
+};
 
-export default TestPage
+export default TestPage;

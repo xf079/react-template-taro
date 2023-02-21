@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import useToggle from './useToggle';
+import useToggle from '../use-toggle';
 
 export interface Actions {
   setTrue: () => void;
@@ -8,7 +8,7 @@ export interface Actions {
   toggle: () => void;
 }
 
-function useBoolean(defaultValue = false): [boolean, Actions] {
+const useBoolean = (defaultValue = false): [boolean, Actions] => {
   const [state, { toggle, set }] = useToggle(defaultValue);
 
   const actions: Actions = useMemo(() => {
@@ -23,6 +23,6 @@ function useBoolean(defaultValue = false): [boolean, Actions] {
   }, []);
 
   return [state, actions];
-}
+};
 
 export default useBoolean;

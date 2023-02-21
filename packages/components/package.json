@@ -1,0 +1,13 @@
+{
+  "name": "@linkio/core",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "linkio design components",
+  "main": "src/index.ts",
+  "scripts": {
+    "clean": "pnpm rimraf node_modules && pnpm rimraf dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

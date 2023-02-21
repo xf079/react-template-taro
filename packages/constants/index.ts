@@ -1,0 +1,2 @@
+export const prefix =
+  '\u0074\u0065\u0063\u006f\u002d\u0063\u006f\u0072\u0065\u002d';

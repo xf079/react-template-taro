@@ -1,0 +1,13 @@
+{
+  "name": "@linkio/constants",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "linkio design hooks",
+  "main": "index.ts",
+  "scripts": {
+    "clean": "pnpm rimraf node_modules && pnpm rimraf dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

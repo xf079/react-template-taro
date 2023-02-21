@@ -6,12 +6,11 @@ import {
 } from '@/stores/modules/global';
 import './index.scss';
 import Modal from '@/components/modal/modal';
-import useInterval from '@/hooks/_core/useInterval';
-import useUpdate from '@/hooks/_core/useUpdate';
-import Overlay, { OverlayRefType } from '@/_core/components/overlay';
+import { Overlay, Loading, ActionSheet } from '@linkio/core';
+import { useInterval, useUpdate } from '@linkio/hooks';
+
 import { useRef, useState } from 'react';
-import Loading from '@/_core/components/loading/loading';
-import ActionSheet from '@/_core/components/action-sheet';
+import { OverlayRefType } from '@linkio/core/src/overlay';
 
 definePageConfig({
   navigationBarTitleText: '首页'

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { isFunction } from 'lodash-es';
-import useLatest from './useLatest';
+import useLatest from '../use-latest';
 
 const useUnmount = (fn: () => void) => {
   if (!isFunction(fn)) {
@@ -17,5 +17,4 @@ const useUnmount = (fn: () => void) => {
     []
   );
 };
-
 export default useUnmount;

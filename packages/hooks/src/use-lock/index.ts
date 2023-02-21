@@ -19,5 +19,4 @@ const useLock = <T extends any[], R>(fn: (...args: T) => Promise<R>) => {
     [fn]
   );
 };
-
 export default useLock;
