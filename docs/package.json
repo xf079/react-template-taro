@@ -1,0 +1,24 @@
+{
+  "name": "@linkio/docs",
+  "version": "0.0.1",
+  "description": "A react library developed with dumi",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "dumi dev",
+    "build": "father build",
+    "build:watch": "father dev",
+    "docs:build": "dumi build"
+  },
+  "authors": [],
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "dumi": "^2.0.2",
+    "father": "^4.1.0",
+    "dumi-theme-mobile": "^2.0.4"
+  }
+}

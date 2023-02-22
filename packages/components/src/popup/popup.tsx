@@ -4,9 +4,8 @@ import { EnterHandler, ExitHandler } from 'react-transition-group/Transition';
 import { isNumber, isUndefined } from 'lodash-es';
 import { View } from '@tarojs/components';
 import classNames from 'classnames';
-import Transition from '@/_core/components/transition';
-import useUncontrolled from '@/hooks/_core/useUncontrolled';
-import { prefixClassname } from '@/_core/components/utils';
+import Transition from '../transition';
+import { useUncontrolled, useNamespace } from '@linkio/hooks';
 import { PopupPlacement, toTransactionName, usePopupChildren } from './shared';
 import PopupContext from './popup.context';
 import PopupOverlay from './popup.overlay';
@@ -56,6 +55,7 @@ const Popup = memo<PopupProps>((props) => {
     onTransitionExited,
     ...restProps
   } = props;
+  const ns = useNamespace('popup');
   const [visible] = useUncontrolled({
     defaultValue: defaultVisible,
     value: visibleProp
@@ -94,15 +94,13 @@ const Popup = memo<PopupProps>((props) => {
       >
         <View
           className={classNames(
-            prefixClassname('popup'),
-            {
-              [prefixClassname('popup--rounded')]: rounded,
-              [prefixClassname('popup--center')]: isUndefined(placement),
-              [prefixClassname('popup--top')]: placement === 'top',
-              [prefixClassname('popup--right')]: placement === 'right',
-              [prefixClassname('popup--bottom')]: placement === 'bottom',
-              [prefixClassname('popup--left')]: placement === 'left'
-            },
+            ns.b(),
+            ns.is('rounded', rounded),
+            ns.is('center', isUndefined(placement)),
+            ns.is('top', placement === 'top'),
+            ns.is('right', placement === 'right'),
+            ns.is('bottom', placement === 'bottom'),
+            ns.is('left', placement === 'left'),
             className
           )}
           style={{

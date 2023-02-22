@@ -79,7 +79,7 @@
 }
 
 // Fade Animation
-.#{$component-prefix}transition-fade {
+.#{$component-prefix}transition--fade {
   &-appear-active,
   &-enter-active {
     animation-name: #{$component-prefix}fade-in;
@@ -103,7 +103,7 @@
 }
 
 // Slide Animation
-.#{$component-prefix}transition-slide-up {
+.#{$component-prefix}transition--slide-up {
   &-appear-active,
   &-enter-active {
     animation-name: #{$component-prefix}slide-up-enter;
@@ -126,7 +126,7 @@
   }
 }
 
-.#{$component-prefix}transition-slide-down {
+.#{$component-prefix}transition--slide-down {
   &-appear-active,
   &-enter-active {
     animation-name: #{$component-prefix}slide-down-enter;
@@ -149,7 +149,7 @@
   }
 }
 
-.#{$component-prefix}transition-slide-left {
+.#{$component-prefix}transition--slide-left {
   &-appear-active,
   &-enter-active {
     animation-name: #{$component-prefix}slide-left-enter;
@@ -172,7 +172,7 @@
   }
 }
 
-.#{$component-prefix}transition-slide-right {
+.#{$component-prefix}transition--slide-right {
   &-appear-active,
   &-enter-active {
     animation-name: #{$component-prefix}slide-right-enter;

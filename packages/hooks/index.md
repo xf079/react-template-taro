@@ -1,0 +1,6 @@
+---
+nav:
+  path: /hooks
+---
+
+test

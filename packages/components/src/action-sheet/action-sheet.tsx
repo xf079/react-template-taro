@@ -1,9 +1,9 @@
 import { memo, ReactNode } from 'react';
-import classNames from 'classnames';
 import { View } from '@tarojs/components';
+import { useNamespace } from '@linkio/hooks';
 import Popup, { PopupProps } from '../popup';
-import { prefixClassname } from '@linkio/utils';
 import './action-sheet.scss';
+import classNames from 'classnames';
 
 export interface ActionItem {
   key: string | number;
@@ -24,8 +24,6 @@ export interface ActionSheetProps extends PopupProps {
   closeOnAction?: boolean;
 }
 
-const classPrefix = 'action-sheet';
-
 const ActionSheet = memo<ActionSheetProps>((props) => {
   const {
     actions = [],
@@ -37,6 +35,7 @@ const ActionSheet = memo<ActionSheetProps>((props) => {
     ...resetProps
   } = props;
 
+  const ns = useNamespace('action-sheet');
   const handleActionItem = (action, index) => {
     onAction?.(action, index);
     if (closeOnAction) {
@@ -53,42 +52,26 @@ const ActionSheet = memo<ActionSheetProps>((props) => {
 
   return (
     <Popup {...resetProps} placement='bottom'>
-      <View className={classNames(prefixClassname(classPrefix))}>
-        {extra && (
-          <View
-            className={classNames(prefixClassname(`${classPrefix}__extra`))}
-          >
-            {extra}
-          </View>
-        )}
-        <View className={classNames(prefixClassname(`${classPrefix}__list`))}>
+      <View className={ns.b()}>
+        {extra && <View className={ns.e('extra')}>{extra}</View>}
+        <View className={ns.e('list')}>
           {actions.map((action, index) => (
             <View
               key={action.key}
-              className={classNames(prefixClassname(`${classPrefix}__item`), {
-                [prefixClassname(`${classPrefix}__item-danger`)]: action.danger,
-                [prefixClassname(`${classPrefix}__item-disabled`)]:
-                  action.disabled,
-                [prefixClassname(`${classPrefix}__item-bold`)]: action.bold
-              })}
+              className={classNames(
+                ns.e('item'),
+                ns.is('danger', action.danger),
+                ns.is('disabled', action.disabled),
+                ns.is('bold', action.bold)
+              )}
               onClick={() => handleActionItem(action, index)}
             >
-              <View
-                key={action.key}
-                className={classNames(
-                  prefixClassname(`${classPrefix}__item__name`)
-                )}
-              >
+              <View key={action.key} className={ns.em('item', 'name')}>
                 {action.text}
               </View>
 
               {action.description && (
-                <View
-                  key={action.key}
-                  className={classNames(
-                    prefixClassname(`${classPrefix}__item__description`)
-                  )}
-                >
+                <View key={action.key} className={ns.em('item', 'description')}>
                   {action.description}
                 </View>
               )}
@@ -96,20 +79,9 @@ const ActionSheet = memo<ActionSheetProps>((props) => {
           ))}
         </View>
         {cancelText && (
-          <View
-            className={classNames(prefixClassname(`${classPrefix}__cancel`))}
-            onClick={handleCancelAction}
-          >
-            <View
-              className={classNames(prefixClassname(`${classPrefix}__item`))}
-            >
-              <View
-                className={classNames(
-                  prefixClassname(`${classPrefix}__item__name`)
-                )}
-              >
-                {cancelText}
-              </View>
+          <View className={ns.e('cancel')} onClick={handleCancelAction}>
+            <View className={ns.e('item')}>
+              <View className={ns.em('item', 'name')}>{cancelText}</View>
             </View>
           </View>
         )}

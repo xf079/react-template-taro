@@ -3,20 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "description": "linkio design hooks",
-  "main": "./dist/index.cjs",
-  "files": [
-    "dist"
-  ],
-  "types": "./dist/index.d.ts",
+  "main": "./src/index.ts",
   "scripts": {
-    "dev": "pnpm run stub",
-    "stub": "unbuild",
     "clean": "pnpm rimraf node_modules && pnpm rimraf dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "unbuild": "^1.1.2"
-  }
+  "dependencies": {}
 }

@@ -3,7 +3,7 @@
 .#{$component-prefix}loading {
   display: inline-flex;
   color: $loading-color;
-  &__vertical {
+  &--vertical {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -14,7 +14,7 @@
       }
     }
   }
-  &__horizontal {
+  &--horizontal {
     align-items: center;
     flex-direction: row;
     .#{$component-prefix}loading {
@@ -24,13 +24,14 @@
       }
     }
   }
+
   &__spinner {
     width: $loading-spinner-size;
     height: $loading-spinner-size;
     position: relative;
     animation: #{$component-prefix}-rotate $loading-animation-duration steps(12)
       infinite;
-    &__item {
+    &--item {
       position: absolute;
       top: 0;
       left: 0;
@@ -67,7 +68,7 @@
     animation: #{$component-prefix}-circular infinite $loading-animation-duration
       linear;
   }
-  &__text {
+  &--text {
     font-size: $loading-font-size;
     color: $loading-color;
   }

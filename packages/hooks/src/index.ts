@@ -8,6 +8,7 @@ import useTimeout from './use-timeout';
 import useUncontrolled from './use-uncontrolled';
 import useUnmount from './use-unmount';
 import useUpdate from './use-update';
+import useNamespace from './use-namespace';
 import useToggle from './use-toggle';
 
 export {
@@ -21,5 +22,6 @@ export {
   useUncontrolled,
   useUnmount,
   useUpdate,
-  useToggle
+  useToggle,
+  useNamespace
 };

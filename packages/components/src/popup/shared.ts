@@ -1,4 +1,3 @@
-import { TransitionName } from '@/_core/components/transition';
 import {
   Children,
   isValidElement,
@@ -6,8 +5,10 @@ import {
   ReactNode,
   useMemo
 } from 'react';
-import Overlay from '@/_core/components/overlay';
-import { isElementOf } from '@/_core/components/utils/validate';
+import { isElementOf } from '@linkio/utils';
+import { TransitionName } from '../transition';
+
+import Overlay from '../overlay';
 
 export type PopupPlacement = 'top' | 'right' | 'bottom' | 'left';
 

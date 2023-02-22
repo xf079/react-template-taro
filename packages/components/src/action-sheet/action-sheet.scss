@@ -32,26 +32,27 @@
     &:last-child {
       border-bottom: none;
     }
-    &__name {
-      color: $action-sheet-item-color;
-      font-size: $action-sheet-item-font-size;
-    }
-    &__description {
+    &--description {
       font-size: $action-sheet-item-description-font-size;
       color: $action-sheet-item-description-color;
       padding-top: 4px;
     }
-    &-disabled {
+
+    &.is-name {
+      color: $action-sheet-item-color;
+      font-size: $action-sheet-item-font-size;
+    }
+    &.is-disabled {
       cursor: not-allowed;
       pointer-events: none;
       opacity: 0.4;
     }
-    &-danger {
+    &.is-danger {
       .#{$component-prefix}action-sheet__item__name {
         color: $action-sheet-danger-color;
       }
     }
-    &-bold {
+    &.is-bold {
       .#{$component-prefix}action-sheet__item__name {
         font-weight: bold;
       }

@@ -4,7 +4,8 @@ import type {
   EnterHandler,
   ExitHandler
 } from 'react-transition-group/Transition';
-import { useElementStyle, prefixClassname } from '../utils';
+import { getElementStyle } from '@linkio/utils';
+import { useNamespace } from '@linkio/hooks';
 
 import './transition.scss';
 
@@ -60,11 +61,10 @@ const Transition: FC<TransitionProps> = (props) => {
     onExiting,
     onExited
   } = props;
+  const ns = useNamespace('transition');
   const children = useMemo(() => childrenProp, [childrenProp]);
-  const childrenStyle = useElementStyle(children);
-  const transactionName = isTransitionPreset(name)
-    ? prefixClassname(`transition-${name}`)
-    : name;
+  const childrenStyle = getElementStyle(children);
+  const transactionName = isTransitionPreset(name) ? ns.m(name) : name;
   const [enter, setEnter] = useState(false);
   const [exited, setExited] = useState(false);
 

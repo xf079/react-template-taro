@@ -5,7 +5,6 @@ import {
   updateEnterFirstMiniProgram
 } from '@/stores/modules/global';
 import './index.scss';
-import Modal from '@/components/modal/modal';
 import { Overlay, Loading, ActionSheet } from '@linkio/core';
 import { useInterval, useUpdate } from '@linkio/hooks';
 
@@ -53,7 +52,6 @@ const Index = () => {
       <View onClick={handleUpdateEnter}>
         <Text>小程序是否第一次进入{enterFirstMiniProgram ? 1 : 0}</Text>
       </View>
-      <Modal title={''} />
       <Button onClick={() => clear()}>清除定时器</Button>
       <Button onClick={() => run()}>开始定时器</Button>
       <Button onClick={() => update()}>更新</Button>
@@ -77,9 +75,15 @@ const Index = () => {
       >
         <View>123</View>
       </Popup>*/}
-      <Loading type='circular' color='red' size={14} direction='vertical'>
+      <Loading type='circular' color='#ddd' size={54} direction='vertical'>
         加载中...
       </Loading>
+      <Loading
+        type='spinner'
+        color='#ccc'
+        size={34}
+        direction='vertical'
+      ></Loading>
       <ActionSheet
         visible={visible}
         closeable

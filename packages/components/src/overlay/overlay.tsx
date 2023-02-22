@@ -11,8 +11,7 @@ import { ITouchEvent } from '@tarojs/components/types/common';
 import { ViewProps } from '@tarojs/components/types/View';
 import classNames from 'classnames';
 import { isNumber } from 'lodash-es';
-import useUncontrolled from '@/hooks/_core/useUncontrolled';
-import { prefixClassname } from '../utils';
+import { useNamespace, useUncontrolled } from '@linkio/hooks';
 import Transition from '../transition';
 
 import './overlay.scss';
@@ -62,6 +61,8 @@ const Overlay = memo<OverlayProps>(
       ...restProps
     } = props;
 
+    const ns = useNamespace('overlay');
+
     const [visible = false, setVisible] = useUncontrolled<boolean>({
       value: visibleProp,
       defaultValue: defaultVisible,
@@ -106,13 +107,7 @@ const Overlay = memo<OverlayProps>(
         name='fade'
       >
         <View
-          className={classNames(
-            prefixClassname('overlay'),
-            {
-              [prefixClassname('overlay--open')]: visible
-            },
-            className
-          )}
+          className={classNames(ns.b(), ns.is('open', visible), className)}
           style={{
             backgroundColor: background,
             ...durationStyle,

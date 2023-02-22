@@ -2,7 +2,7 @@ import { memo, ReactNode, useMemo } from 'react';
 import { View } from '@tarojs/components';
 import classNames from 'classnames';
 import { range } from 'lodash-es';
-import { prefixClassname } from '@/_core/components/utils';
+import { useNamespace } from '@linkio/hooks';
 
 import './loading.scss';
 
@@ -15,13 +15,14 @@ export interface LoadingProps {
 }
 
 const SpinIcon = ({ color }: LoadingProps) => {
+  const ns = useNamespace('loading');
   return (
     <>
       {range(0, 8).map((key) => (
         <View
           key={key}
           style={{ color: color }}
-          className={prefixClassname('loading__spinner__item')}
+          className={ns.em('spinner', 'item')}
         />
       ))}
     </>
@@ -29,6 +30,7 @@ const SpinIcon = ({ color }: LoadingProps) => {
 };
 
 const SpinnerLoading = ({ size, color }: LoadingProps) => {
+  const ns = useNamespace('loading');
   const baseStyle = useMemo(
     () => ({
       width: size,
@@ -37,13 +39,14 @@ const SpinnerLoading = ({ size, color }: LoadingProps) => {
     [size]
   );
   return (
-    <View className={prefixClassname('loading__spinner')} style={baseStyle}>
+    <View className={ns.e('spinner')} style={baseStyle}>
       <SpinIcon color={color} />
     </View>
   );
 };
 
 const CircularLoading = ({ color, size }: LoadingProps) => {
+  const ns = useNamespace('loading');
   const baseStyle = useMemo(
     () => ({
       borderColor: color,
@@ -52,9 +55,7 @@ const CircularLoading = ({ color, size }: LoadingProps) => {
     }),
     [color, size]
   );
-  return (
-    <View className={prefixClassname('loading__circular')} style={baseStyle} />
-  );
+  return <View className={ns.e('circular')} style={baseStyle} />;
 };
 
 const Loading = memo<LoadingProps>((props) => {
@@ -65,18 +66,14 @@ const Loading = memo<LoadingProps>((props) => {
     direction = 'vertical',
     children
   } = props;
+  const ns = useNamespace('loading');
 
   return (
-    <View
-      className={classNames(
-        prefixClassname('loading'),
-        prefixClassname(`loading__${direction}`)
-      )}
-    >
+    <View className={classNames(ns.b(), ns.m(direction))}>
       {type === 'circular' && <CircularLoading size={size} color={color} />}
       {type === 'spinner' && <SpinnerLoading size={size} color={color} />}
       {children && (
-        <View className={prefixClassname('loading__text')} style={{ color }}>
+        <View className={ns.m('text')} style={{ color }}>
           {children}
         </View>
       )}
