@@ -8,13 +8,13 @@ import {
 import dayjs from 'dayjs';
 
 class Storage {
+  #prefix = '_storage';
+  #timer = 24;
+
   constructor(prefix: string, timer = 24) {
     this.#prefix = prefix;
     this.#timer = timer;
   }
-
-  #prefix = '_storage';
-  #timer = 24;
 
   getItem(key: string) {
     return new Promise((resolve) => {

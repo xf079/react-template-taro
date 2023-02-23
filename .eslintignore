@@ -1,5 +1,7 @@
 /generator
 /config
+node_modules
+dist
 .cz-config.js
 commitlint.config.js
 alias.config.js

@@ -1,5 +1,7 @@
 import { useRef } from 'react';
-import { defaultNamespace } from '@linkio/constants';
+// import { defaultNamespace } from '@linkio/constants';
+
+const defaultNamespace = 'test';
 
 const statePrefix = 'is-';
 

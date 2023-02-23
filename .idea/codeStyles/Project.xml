@@ -34,6 +34,7 @@
       </indentOptions>
     </codeStyleSettings>
     <codeStyleSettings language="JavaScript">
+      <option name="BLOCK_COMMENT_ADD_SPACE" value="true" />
       <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
       <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
       <option name="ALIGN_MULTILINE_FOR" value="false" />
@@ -49,6 +50,7 @@
       </indentOptions>
     </codeStyleSettings>
     <codeStyleSettings language="TypeScript">
+      <option name="BLOCK_COMMENT_ADD_SPACE" value="true" />
       <option name="SOFT_MARGINS" value="80" />
       <indentOptions>
         <option name="INDENT_SIZE" value="2" />

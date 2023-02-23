@@ -1,15 +1,13 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { isNumber } from 'lodash-es';
 import useLatest from '../use-latest';
 
-const useTimeout = (
-  fn: () => void,
-  options?: Partial<{
-    delay: number | undefined;
-    immediate: boolean;
-  }>
-) => {
-  const { immediate = false, delay = undefined } = options || {};
+export interface OptionsType {
+  delay?: number;
+  immediate?: boolean;
+}
+
+const useTimeout = (fn: () => void, options?: Partial<OptionsType>) => {
+  const { immediate = false, delay } = options || {};
   const handlerRef = useLatest(fn);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -26,7 +24,7 @@ const useTimeout = (
   }, []);
 
   useEffect(() => {
-    if (!isNumber(delay) || delay < 0) {
+    if (!delay || delay < 0) {
       return;
     }
     if (immediate) {

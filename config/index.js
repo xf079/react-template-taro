@@ -21,6 +21,11 @@ const config = {
   },
   alias: {
     '@': path.resolve(__dirname, '../src'),
+    '@linkio/hooks': path.resolve(__dirname, '../packages/hooks/src/index.ts'),
+    '@linkio/core': path.resolve(
+      __dirname,
+      '../packages/components/src/index.ts'
+    )
   },
   copy: {
     patterns: [],

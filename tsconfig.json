@@ -9,7 +9,7 @@
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
     "outDir": "lib",
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "noUnusedParameters": true,
     "strictNullChecks": true,
     "sourceMap": true,
@@ -22,13 +22,14 @@
     "downlevelIteration": true,
     "skipLibCheck": true,
     "declaration": false,
-    "importHelpers": true,
     "typeRoots": ["node_modules/@types", "typings", "src/typings"],
     "paths": {
       "@/*": ["src/*"],
+      "@linkio/core": ["./packages/components/src/index.ts"],
       "@linkio/hooks": ["./packages/hooks/src/index.ts"]
     }
   },
+  "include": ["src","packages"],
   "exclude": ["node_modules", "lib", "es", "dist"],
   "compileOnSave": false
 }

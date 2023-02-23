@@ -1,14 +1,13 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { isNumber } from 'lodash-es';
 import useLatest from '../use-latest';
 
 export interface OptionsType {
-  delay: number | undefined;
+  delay?: number;
   immediate?: boolean;
 }
 
 const useInterval = (fn: () => void, options: OptionsType) => {
-  const { immediate = false, delay = undefined } = options;
+  const { immediate = false, delay } = options;
   const handlerRef = useLatest(fn);
   const timerRef = useRef<NodeJS.Timer | null>(null);
 
@@ -25,7 +24,7 @@ const useInterval = (fn: () => void, options: OptionsType) => {
   }, []);
 
   useEffect(() => {
-    if (!isNumber(delay) || delay < 0) {
+    if (!delay || delay < 0) {
       return;
     }
     if (immediate) {

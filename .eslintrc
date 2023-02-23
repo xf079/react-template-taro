@@ -41,7 +41,7 @@
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/ban-ts-comment": "off",
-    "spaced-comment": ["error", "always", { "markers": ["/"] }],
+    "spaced-comment": ["error", "always", { "markers": ["/"] }]
   },
   "settings": {
     "import/parsers": {

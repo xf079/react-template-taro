@@ -4,26 +4,20 @@
  *
  * title.zh-CN: 基础用法
  * desc.zh-CN: 切换 boolean，可以接收默认值。
+ * domeUrl:http://172.168.20.139:10086/#/pages/index/index
  */
-
-import React from 'react';
-import { useBoolean } from 'ahooks';
+import * as React from 'react';
+import { useUpdate } from '@linkio/hooks';
 
 export default () => {
-  const [state, { toggle, setTrue, setFalse }] = useBoolean(true);
+  const update = useUpdate();
 
   return (
     <div>
-      <p>Effects：{JSON.stringify(state)}</p>
+      <p></p>
       <p>
-        <button type='button' onClick={toggle}>
+        <button type='button' onClick={update}>
           Toggle
-        </button>
-        <button type='button' onClick={setFalse} style={{ margin: '0 16px' }}>
-          Set false
-        </button>
-        <button type='button' onClick={setTrue}>
-          Set true
         </button>
       </p>
     </div>

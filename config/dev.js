@@ -8,7 +8,6 @@ module.exports = {
     // 服务端接口地址，对应老配置的baseUrl
     APP_URL: '""'
   },
-  plugins: ['@tarojs/plugin-react-devtools'],
   mini: {},
   h5: {}
 };
